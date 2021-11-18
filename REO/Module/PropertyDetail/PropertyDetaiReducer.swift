@@ -14,7 +14,7 @@ struct PropertyDetailState: Equatable {
 }
 
 public enum PropertyDetailAction: Equatable {
-    
+    case none
 }
 
 struct PropertyDetailEnv {

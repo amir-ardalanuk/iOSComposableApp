@@ -28,7 +28,10 @@ var appReducer = Reducer<AppState, AppAction, Enviroment>.combine(
         }),
     Reducer<AppState, AppAction, Enviroment> { state, action, env in
         switch action {
-        case let .propertyListAction(.detailProperty(property)):
+        case let .propertyListAction(.detailProperty(id)):
+            guard let property = state.propertyListState.list.filter({ $0.id == id }).first else {
+                return .none
+            }
             state.propertyListState = state.propertyListState.update(detail: .init(property: property))
             return .none
         default:

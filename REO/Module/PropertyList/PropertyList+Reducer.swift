@@ -44,8 +44,8 @@ struct ProperyListState: Equatable {
 public enum PropertyListAction: Equatable {
     case fetch
     case loadedData(Core.PropertyList)
-    case failedFetching(String)
-    case detailProperty(Property)
+    case failedFetching(String?)
+    case detailProperty(id: String)
     case dismisDetail
     case detailAction(PropertyDetailAction)
 }
@@ -84,7 +84,7 @@ var propertyListReducer = Reducer<ProperyListState, PropertyListAction, Property
     case let .failedFetching(error):
         // FIXME: - implement error state
         return .none
-    case .dismisDetail, .detailProperty:
+    case .dismisDetail, .detailProperty, .detailAction:
         return .none
     }
 }

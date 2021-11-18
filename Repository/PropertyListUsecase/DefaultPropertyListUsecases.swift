@@ -47,6 +47,6 @@ extension Property {
         self = .init(
             title: propertyItem.name ?? "Unknown",
             image: propertyItem.image.flatMap { URL(string: $0) },
-            id: propertyItem.id)
+            id: propertyItem.id, address: propertyItem.address ?? "address")
     }
 }

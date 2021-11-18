@@ -83,9 +83,9 @@ extension PropertyListAction {
         case .dismissDetail:
             self = .dismisDetail
         case let .showDetail(detail):
-            self = .detailProperty(.init(title: detail.title, image: detail.imageURL, id: detail.id))
+            self = .detailProperty(id: detail.id)
         case .error:
-            self = .failedFetching("")
+            self = .failedFetching(nil)
         }
     }
 }

@@ -9,6 +9,6 @@ import Foundation
 
 public extension Property {
     static func stub(id: String = UUID().uuidString ) -> Property {
-        .init(title: "Amir", image: URL(string:""), id: id)
+        .init(title: "Amir", image: URL(string:""), id: id, address: "address")
     }
 }
