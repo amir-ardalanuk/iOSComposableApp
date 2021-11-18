@@ -17,6 +17,4 @@ public struct Property: Equatable, Identifiable {
         self.image = image
         self.id = id
     }
-    
-    
 }
