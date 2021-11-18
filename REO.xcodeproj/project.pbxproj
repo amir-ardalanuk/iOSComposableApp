@@ -14,6 +14,7 @@
 		E57F4A6427465CCF00F25ACB /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E57F4A6327465CCF00F25ACB /* ComposableArchitecture */; };
 		E57F4A6827465D8200F25ACB /* ProperyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F4A6727465D8200F25ACB /* ProperyList.swift */; };
 		E57F4A6B27465EDE00F25ACB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F4A6A27465EDE00F25ACB /* Theme.swift */; };
+		E57F4A6E2746657F00F25ACB /* PropertyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F4A6D2746657F00F25ACB /* PropertyItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E57F4A5B27465C6000F25ACB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E57F4A6727465D8200F25ACB /* ProperyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProperyList.swift; sourceTree = "<group>"; };
 		E57F4A6A27465EDE00F25ACB /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		E57F4A6D2746657F00F25ACB /* PropertyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		E57F4A6627465D7300F25ACB /* ProperyList */ = {
 			isa = PBXGroup;
 			children = (
+				E57F4A6C2746656900F25ACB /* PropertyItem */,
 				E57F4A6727465D8200F25ACB /* ProperyList.swift */,
 			);
 			path = ProperyList;
@@ -97,6 +100,14 @@
 				E57F4A6A27465EDE00F25ACB /* Theme.swift */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		E57F4A6C2746656900F25ACB /* PropertyItem */ = {
+			isa = PBXGroup;
+			children = (
+				E57F4A6D2746657F00F25ACB /* PropertyItem.swift */,
+			);
+			path = PropertyItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +190,7 @@
 				E57F4A6B27465EDE00F25ACB /* Theme.swift in Sources */,
 				E57F4A6827465D8200F25ACB /* ProperyList.swift in Sources */,
 				E57F4A5527465C5F00F25ACB /* REOApp.swift in Sources */,
+				E57F4A6E2746657F00F25ACB /* PropertyItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

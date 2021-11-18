@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProperyList: View {
     
-    var list = [Property]()
+    var list = [PropertyItem.Property]()
     var body: some View {
         VStack {
             Text("Properties")
@@ -18,16 +18,7 @@ struct ProperyList: View {
             
             LazyVStack {
                 ForEach(list) { item in
-                    HStack(spacing: 16) {
-                        AsyncImage(url: item.imageURL)
-                            .frame(width: 64, height: 64, alignment: .center)
-                            .cornerRadius(8)
-                            
-                        
-                        Text(item.title)
-                            .font(Theme.global.font.regular(size: 18))
-                    }
-                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                    PropertyItem(item: item)
                 }
             }
         }
@@ -43,17 +34,8 @@ struct ProperyList: View {
     }
 }
 
-extension ProperyList {
-    struct Property: Identifiable {
-        var id: String
-        var title: String
-        var imageURL: URL?
-    }
-
-}
-
 struct ProperyList_Previews: PreviewProvider {
     static var previews: some View {
-        ProperyList(list: [.init(id: UUID.init().uuidString, title: "Amir", imageURL: URL.init(string: "https://picsum.photos/100/100"))])
+        ProperyList(list: [.stub, .stub])
     }
 }
