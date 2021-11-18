@@ -12,6 +12,8 @@
 		E57F4A5927465C6000F25ACB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E57F4A5827465C6000F25ACB /* Assets.xcassets */; };
 		E57F4A5C27465C6000F25ACB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E57F4A5B27465C6000F25ACB /* Preview Assets.xcassets */; };
 		E57F4A6427465CCF00F25ACB /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E57F4A6327465CCF00F25ACB /* ComposableArchitecture */; };
+		E57F4A6827465D8200F25ACB /* ProperyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F4A6727465D8200F25ACB /* ProperyList.swift */; };
+		E57F4A6B27465EDE00F25ACB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F4A6A27465EDE00F25ACB /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		E57F4A5627465C5F00F25ACB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E57F4A5827465C6000F25ACB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E57F4A5B27465C6000F25ACB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E57F4A6727465D8200F25ACB /* ProperyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProperyList.swift; sourceTree = "<group>"; };
+		E57F4A6A27465EDE00F25ACB /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 		E57F4A5327465C5F00F25ACB /* REO */ = {
 			isa = PBXGroup;
 			children = (
+				E57F4A6927465ED300F25ACB /* Resource */,
+				E57F4A6527465D6D00F25ACB /* Module */,
 				E57F4A5427465C5F00F25ACB /* REOApp.swift */,
 				E57F4A5627465C5F00F25ACB /* ContentView.swift */,
 				E57F4A5827465C6000F25ACB /* Assets.xcassets */,
@@ -67,6 +73,30 @@
 				E57F4A5B27465C6000F25ACB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E57F4A6527465D6D00F25ACB /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				E57F4A6627465D7300F25ACB /* ProperyList */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		E57F4A6627465D7300F25ACB /* ProperyList */ = {
+			isa = PBXGroup;
+			children = (
+				E57F4A6727465D8200F25ACB /* ProperyList.swift */,
+			);
+			path = ProperyList;
+			sourceTree = "<group>";
+		};
+		E57F4A6927465ED300F25ACB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E57F4A6A27465EDE00F25ACB /* Theme.swift */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +176,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E57F4A5727465C5F00F25ACB /* ContentView.swift in Sources */,
+				E57F4A6B27465EDE00F25ACB /* Theme.swift in Sources */,
+				E57F4A6827465D8200F25ACB /* ProperyList.swift in Sources */,
 				E57F4A5527465C5F00F25ACB /* REOApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
