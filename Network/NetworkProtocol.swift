@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 public enum NetworkError: Error, Equatable {
     case uknownError
@@ -15,5 +16,6 @@ public enum NetworkError: Error, Equatable {
 }
 
 public protocol NetworkProtocol {
-    func request(_ request: URLRequest, result: @escaping (Result<Data, NetworkError>) -> Void )
+    func request<T: Decodable>(_ request: URLRequest, result: @escaping (Result<T, NetworkError>) -> Void )
+    func request<T: Decodable>(_ request: URLRequest, type: T) -> AnyPublisher<T, Error>
 }

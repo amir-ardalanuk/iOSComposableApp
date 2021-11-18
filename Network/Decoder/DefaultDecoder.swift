@@ -7,8 +7,11 @@
 
 import Foundation
 
-class DefaultDecoder: AnyDecoder {
-    func decode<T>(_ type: T.Type, from data: Data) throws -> T where T : Decodable {
+public class DefaultDecoder: AnyDecoder {
+    
+    public init() {}
+    
+    public func decode<T>(_ type: T.Type, from data: Data) throws -> T where T : Decodable {
         return  try JSONDecoder().decode(T.self, from: data)
     }
 }

@@ -11,10 +11,13 @@ import XCTest
 
 final class DefaultNetworkTest: XCTestCase {
     // MARK: - Properties
-    let sut: NetworkProtocol = DefaultNetwork()
+    var sut: NetworkProtocol!
+    var decoder: MockDecoder!
     
     // MARK: - Life Cycle
     override func setUp() {
+        self.decoder = MockDecoder()
+        self.sut = DefaultNetwork(decoder: decoder)
         super.setUp()
     }
 }
@@ -25,11 +28,12 @@ extension DefaultNetworkTest {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField:"Content-Type");
-        
+        decoder.decodeProvider = {
+            return String("Data Received")
+        }
         let expectation = self.expectation(description: "Wait for \(url) to load.")
-        var data: Data?
-        
-        sut.request(request) { (result) in
+        var data: String?
+        sut.request(request) { (result: Result<String, NetworkError>) in
             data = try? result.get()
             expectation.fulfill()
         }
@@ -45,6 +49,9 @@ extension DefaultNetworkTest {
         
         let expectation = self.expectation(description: "Wait for \(url) to load.")
         var error: NetworkError?
+        decoder.decodeProvider = {
+            return String("Data Received")
+        }
         
         sut.request(request) { (result: Result<Data, NetworkError>) in
             guard case .failure(let networkError) = result else {

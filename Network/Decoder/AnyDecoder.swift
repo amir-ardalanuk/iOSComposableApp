@@ -11,6 +11,6 @@ public enum DecoderError: Error {
     case decodingFailed
 }
 
-protocol AnyDecoder {
+public protocol AnyDecoder {
   func decode<T: Decodable>(_ type: T.Type, from data: Data) throws -> T
 }

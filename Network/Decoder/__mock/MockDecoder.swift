@@ -12,7 +12,7 @@ public final class MockDecoder: AnyDecoder {
     
     public var decodeProvider: (() -> Decodable)?
     
-    func decode<T>(_ type: T.Type, from data: Data) throws -> T where T : Decodable {
+    public func decode<T>(_ type: T.Type, from data: Data) throws -> T where T : Decodable {
         if let provider = decodeProvider, let data = provider() as? T {
             return data
         }

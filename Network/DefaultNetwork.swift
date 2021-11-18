@@ -6,21 +6,24 @@
 //
 
 import Foundation
+import Combine
 
 final public class DefaultNetwork: NetworkProtocol {
     
     // MARK: - Property
-    var urlSession: URLSession {
-        return URLSession.shared
-    }
+    var urlSession: URLSession
+    var decoder: AnyDecoder
     
     // MARK: - init
-    public init() { }
+    public init(session: URLSession = URLSession.shared, decoder: AnyDecoder = DefaultDecoder()) {
+        self.urlSession = session
+        self.decoder = decoder
+    }
     
     
     // MARK: - DefaultNetwork protocol api's
     
-    public func request(_ request: URLRequest, result: @escaping (Result<Data, NetworkError>) -> Void ) {
+    public func request<T: Decodable>(_ request: URLRequest, result: @escaping (Result<T, NetworkError>) -> Void ) {
         urlSession.dataTask(with: request) { data, _, error in
             guard let data = data else {
                 if let error = error {
@@ -30,7 +33,25 @@ final public class DefaultNetwork: NetworkProtocol {
                 }
                 return
             }
-            result(.success(data))
+            
+            guard let decoder = try? self.decoder.decode(T.self, from: data) else {
+                result(.failure(NetworkError.decoderError(.decodingFailed)))
+                return
+            }
+            result(.success(decoder))
         }.resume()
+    }
+    
+    // MARK: - Combine Request
+    
+    public func request<T: Decodable>(_ request: URLRequest, type: T) -> AnyPublisher<T, Error> {
+        return self.urlSession.dataTaskPublisher(for: request)
+            .tryMap { data, _ in
+                try self.decoder.decode(T.self, from: data)
+            }
+            .mapError({ error -> Error in
+                return error
+            })
+            .eraseToAnyPublisher()
     }
 }
