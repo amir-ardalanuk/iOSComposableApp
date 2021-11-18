@@ -22,13 +22,16 @@ struct ProperyListState: Equatable {
         self.detail = detail
     }
     
+    func update(list: [Property]) -> ProperyListState {
+        .init(list: self.list + list, loadingState: self.loadingState, detail: self.detail)
+    }
     
-    func update(list: [Property], loadingState: LoadingState) -> ProperyListState {
-        .init(list: self.list + list, loadingState: loadingState)
+    func update(loadingState: LoadingState) -> ProperyListState {
+        .init(list: self.list, loadingState: loadingState, detail: self.detail)
     }
     
     func update(detail: PropertyDetailState?) -> ProperyListState {
-        .init(list: self.list + list, loadingState: loadingState, detail: detail)
+        .init(list: self.list, loadingState: self.loadingState, detail: detail)
     }
     
     enum LoadingState: Equatable {
@@ -61,16 +64,15 @@ var propertyListReducer = Reducer<ProperyListState, PropertyListAction, Property
     switch action {
     case let .loadedData(propertyList):
         state = state.update(
-            list: propertyList.list,
-            loadingState: ProperyListState.LoadingState.ready(hasMore: propertyList.hasMore, next: propertyList.nextId)
-        )
+            list: propertyList.list
+        ).update(loadingState: .ready(hasMore: propertyList.hasMore, next: propertyList.nextId))
         return .none
     case .fetch:
         guard case let .ready(true, _nextId) = state.loadingState,
               let nextId = _nextId else {
             return .none
         }
-        state = state.update(list: state.list, loadingState: .loading)
+        state = state.update(loadingState: .loading)
         return env.feature.propertyListUsecase.fetchList(count: 10, page: nextId)
             .receive(on: env.mainQueue)
             .map {
@@ -84,7 +86,10 @@ var propertyListReducer = Reducer<ProperyListState, PropertyListAction, Property
     case let .failedFetching(error):
         // FIXME: - implement error state
         return .none
-    case .dismisDetail, .detailProperty, .detailAction:
+    case .dismisDetail:
+        state = state.update(detail: nil)
+        return .none
+    case .detailProperty, .detailAction:
         return .none
     }
 }
