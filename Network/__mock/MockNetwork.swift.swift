@@ -21,7 +21,7 @@ public final class MockNetwork: NetworkProtocol {
         }
     }
     
-    public func request<T>(_ request: URLRequest, type: T) -> AnyPublisher<T, Error> where T : Decodable {
+    public func request<T>(_ request: URLRequest, type: T.Type) -> AnyPublisher<T, Error> where T : Decodable {
         if let provider = resultProvider as? (Result<T, NetworkError>) {
             return Just(try! provider.get())
                 .mapError { _ -> Error in

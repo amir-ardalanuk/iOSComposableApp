@@ -19,11 +19,11 @@ protocol CustomFont {
 
 struct SystemFont: CustomFont {
     func regular(size: CGFloat) -> Font {
-        Font.custom("Chalkboard-Bold", size: size)
+        Font.custom("Helvetica-Bold", size: size)
     }
     
     func bold(size: CGFloat) -> Font {
-        Font.custom("Chalkboard", size: size)
+        Font.custom("Helvetica", size: size)
     }
 }
 

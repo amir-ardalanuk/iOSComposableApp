@@ -17,5 +17,5 @@ public enum NetworkError: Error, Equatable {
 
 public protocol NetworkProtocol {
     func request<T: Decodable>(_ request: URLRequest, result: @escaping (Result<T, NetworkError>) -> Void )
-    func request<T: Decodable>(_ request: URLRequest, type: T) -> AnyPublisher<T, Error>
+    func request<T: Decodable>(_ request: URLRequest, type: T.Type) -> AnyPublisher<T, Error>
 }

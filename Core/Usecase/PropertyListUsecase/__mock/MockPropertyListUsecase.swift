@@ -10,9 +10,14 @@ import Foundation
 import Combine
 
 public final class MockPropertyListUsecases: PropertyListUsecases {
+    
+    public init() {
+        
+    }
+    
     public var resultProvider: (() -> AnyPublisher<PropertyList, Error>)?
     
-    func fetchList() -> AnyPublisher<PropertyList, Error> {
+    public func fetchList(count: Int, page: Int) -> AnyPublisher<PropertyList, Error> {
         if let provider = resultProvider?() {
             return provider
         }

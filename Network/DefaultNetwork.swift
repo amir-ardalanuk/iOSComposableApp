@@ -44,7 +44,7 @@ final public class DefaultNetwork: NetworkProtocol {
     
     // MARK: - Combine Request
     
-    public func request<T: Decodable>(_ request: URLRequest, type: T) -> AnyPublisher<T, Error> {
+    public func request<T: Decodable>(_ request: URLRequest, type: T.Type) -> AnyPublisher<T, Error> {
         return self.urlSession.dataTaskPublisher(for: request)
             .tryMap { data, _ in
                 try self.decoder.decode(T.self, from: data)

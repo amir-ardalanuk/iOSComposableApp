@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct PropertyList {
+public struct PropertyList: Equatable {
     public let list: [Property]
     public let hasMore: Bool
     public let nextId: Int?

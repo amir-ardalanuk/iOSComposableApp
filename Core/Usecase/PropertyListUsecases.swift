@@ -8,6 +8,6 @@
 import Foundation
 import Combine
 
-protocol PropertyListUsecases {
-    func fetchList() -> AnyPublisher<PropertyList, Error>
+public protocol PropertyListUsecases {
+    func fetchList(count: Int, page: Int) -> AnyPublisher<PropertyList, Error>
 }

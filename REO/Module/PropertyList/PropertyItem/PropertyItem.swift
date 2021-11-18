@@ -15,6 +15,7 @@ struct PropertyItem: View {
         HStack(spacing: 16) {
             AsyncImage(url: item.imageURL)
                 .frame(width: 64, height: 64, alignment: .center)
+                .aspectRatio(contentMode: .fit)
                 .cornerRadius(8)
                 
             
