@@ -8,9 +8,9 @@
 import Foundation
 
 public struct Property: Equatable, Identifiable {
-    public var title: String
-    public var image: URL?
-    public var id: String
+    public let title: String
+    public let image: URL?
+    public let id: String
     
     public init(title: String, image: URL? = nil, id: String) {
         self.title = title

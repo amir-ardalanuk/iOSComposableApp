@@ -35,6 +35,10 @@
 		E57F4AB9274679E200F25ACB /* DecoderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F4AB8274679E200F25ACB /* DecoderTest.swift */; };
 		E57F4ABC27467A8700F25ACB /* DefaultDecodet+Stubbing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F4ABB27467A8700F25ACB /* DefaultDecodet+Stubbing.swift */; };
 		E57F4ABF27467B0500F25ACB /* DefaultNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F4ABE27467B0500F25ACB /* DefaultNetworkTests.swift */; };
+		E57F4AC12746882C00F25ACB /* PropertyListUsecases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F4AC02746882C00F25ACB /* PropertyListUsecases.swift */; };
+		E57F4AC52746894700F25ACB /* MockPropertyListUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F4AC42746894700F25ACB /* MockPropertyListUsecase.swift */; };
+		E57F4AC7274689C400F25ACB /* PropperyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F4AC6274689C400F25ACB /* PropperyList.swift */; };
+		E57F4AC9274689F200F25ACB /* PropertyList+Stubbing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F4AC8274689F200F25ACB /* PropertyList+Stubbing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +114,10 @@
 		E57F4AB8274679E200F25ACB /* DecoderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderTest.swift; sourceTree = "<group>"; };
 		E57F4ABB27467A8700F25ACB /* DefaultDecodet+Stubbing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultDecodet+Stubbing.swift"; sourceTree = "<group>"; };
 		E57F4ABE27467B0500F25ACB /* DefaultNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkTests.swift; sourceTree = "<group>"; };
+		E57F4AC02746882C00F25ACB /* PropertyListUsecases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListUsecases.swift; sourceTree = "<group>"; };
+		E57F4AC42746894700F25ACB /* MockPropertyListUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPropertyListUsecase.swift; sourceTree = "<group>"; };
+		E57F4AC6274689C400F25ACB /* PropperyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropperyList.swift; sourceTree = "<group>"; };
+		E57F4AC8274689F200F25ACB /* PropertyList+Stubbing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PropertyList+Stubbing.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +248,7 @@
 			children = (
 				E57F4A85274674BF00F25ACB /* __mock */,
 				E57F4A832746748600F25ACB /* Property.swift */,
+				E57F4AC6274689C400F25ACB /* PropperyList.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -247,6 +256,7 @@
 		E57F4A85274674BF00F25ACB /* __mock */ = {
 			isa = PBXGroup;
 			children = (
+				E57F4AC8274689F200F25ACB /* PropertyList+Stubbing.swift */,
 				E57F4A86274674D400F25ACB /* Property+Stubbing.swift */,
 			);
 			path = __mock;
@@ -255,6 +265,8 @@
 		E57F4A88274675A800F25ACB /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
+				E57F4AC22746883200F25ACB /* PropertyListUsecase */,
+				E57F4AC02746882C00F25ACB /* PropertyListUsecases.swift */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -322,6 +334,22 @@
 				E57F4ABE27467B0500F25ACB /* DefaultNetworkTests.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		E57F4AC22746883200F25ACB /* PropertyListUsecase */ = {
+			isa = PBXGroup;
+			children = (
+				E57F4AC32746893400F25ACB /* __mock */,
+			);
+			path = PropertyListUsecase;
+			sourceTree = "<group>";
+		};
+		E57F4AC32746893400F25ACB /* __mock */ = {
+			isa = PBXGroup;
+			children = (
+				E57F4AC42746894700F25ACB /* MockPropertyListUsecase.swift */,
+			);
+			path = __mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -526,8 +554,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E57F4AC52746894700F25ACB /* MockPropertyListUsecase.swift in Sources */,
 				E57F4A842746748600F25ACB /* Property.swift in Sources */,
 				E57F4A87274674D400F25ACB /* Property+Stubbing.swift in Sources */,
+				E57F4AC12746882C00F25ACB /* PropertyListUsecases.swift in Sources */,
+				E57F4AC9274689F200F25ACB /* PropertyList+Stubbing.swift in Sources */,
+				E57F4AC7274689C400F25ACB /* PropperyList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
