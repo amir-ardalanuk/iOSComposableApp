@@ -7,19 +7,7 @@
 
 import Foundation
 import ComposableArchitecture
-
-struct Property: Equatable, Identifiable {
-    var title: String
-    var image: URL?
-    var id: String
-    
-}
-
-extension Property {
-    static var stub: Property {
-        .init(title: "Amir", image: URL(string:""), id: UUID().uuidString)
-    }
-}
+import Core
 
 struct ProperyListState: Equatable {
     var list: [Property]
@@ -37,6 +25,6 @@ var properyListReducer = Reducer<ProperyListState, ProperyListAction, ProperyLis
 }
 
 
-var properyListReducerStub = Store<ProperyListState, ProperyListAction>.init(initialState: .init(list: [.stub, .stub]), reducer: properyListReducer, environment: ProperyListEnviroment())
+var properyListReducerStub = Store<ProperyListState, ProperyListAction>.init(initialState: .init(list: [.stub(), .stub()]), reducer: properyListReducer, environment: ProperyListEnviroment())
 
 
