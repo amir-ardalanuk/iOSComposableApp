@@ -14,15 +14,21 @@ import Combine
 struct ProperyListState: Equatable {
     let list: [Property]
     let loadingState: LoadingState
+    let detail: PropertyDetailState?
     
-    init(list: [Property], loadingState: ProperyListState.LoadingState = LoadingState.initial) {
+    init(list: [Property], loadingState: ProperyListState.LoadingState = LoadingState.initial, detail: PropertyDetailState? = nil) {
         self.list = list
         self.loadingState = loadingState
+        self.detail = detail
     }
     
     
     func update(list: [Property], loadingState: LoadingState) -> ProperyListState {
         .init(list: self.list + list, loadingState: loadingState)
+    }
+    
+    func update(detail: PropertyDetailState?) -> ProperyListState {
+        .init(list: self.list + list, loadingState: loadingState, detail: detail)
     }
     
     enum LoadingState: Equatable {
@@ -39,6 +45,9 @@ public enum PropertyListAction: Equatable {
     case fetch
     case loadedData(Core.PropertyList)
     case failedFetching(String)
+    case detailProperty(Property)
+    case dismisDetail
+    case detailAction(PropertyDetailAction)
 }
 
 
@@ -73,7 +82,9 @@ var propertyListReducer = Reducer<ProperyListState, PropertyListAction, Property
             .eraseToEffect()
 
     case let .failedFetching(error):
-        print(error)
+        // FIXME: - implement error state
+        return .none
+    case .dismisDetail, .detailProperty:
         return .none
     }
 }

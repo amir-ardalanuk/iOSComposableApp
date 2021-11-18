@@ -13,7 +13,7 @@ struct PropertyDetailState: Equatable {
     var property: Property
 }
 
-enum PropertyDetailAction: Equatable {
+public enum PropertyDetailAction: Equatable {
     
 }
 

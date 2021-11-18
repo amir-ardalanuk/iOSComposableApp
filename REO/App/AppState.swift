@@ -25,6 +25,15 @@ var appReducer = Reducer<AppState, AppAction, Enviroment>.combine(
     propertyListReducer.pullback(
         state: \AppState.propertyListState, action: /AppAction.propertyListAction, environment: {
             PropertyListEnviroment(feature: $0.appUsecases, mainQueue: .main)
-        })
+        }),
+    Reducer<AppState, AppAction, Enviroment> { state, action, env in
+        switch action {
+        case let .propertyListAction(.detailProperty(property)):
+            state.propertyListState = state.propertyListState.update(detail: .init(property: property))
+            return .none
+        default:
+            return .none
+        }
+    }
 )
     .debug()

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ComposableArchitecture
+import Core
 
 struct ProperyListView: View {
     let store: Store<ProperyListState, PropertyListAction>
@@ -21,11 +22,19 @@ struct ProperyListView: View {
                     VStack {
                         LazyVStack(spacing: 8) {
                             ForEach(viewStore.items) { item in
-                                NavigationLink(destination: {
-                                    Text("Detail")
-                                }, label: {
+                                NavigationLink(
+                                  destination: IfLetStore(
+                                    self.store.scope(state: \.detail, action: PropertyListAction.detailAction),
+                                    then: PropertyDetailView.init(store:)
+                                  ),
+                                  isActive: viewStore.binding(
+                                    get: \.isDetailViewAction,
+                                    send: { $0 ? .showDetail(item) : .dismissDetail }
+                                  )
+                                ) {
                                     PropertyItem(item: item)
-                                }).buttonStyle(PlainButtonStyle())
+                                }
+                                .buttonStyle(PlainButtonStyle())
                             }
                             Rectangle()
                                 .frame(width: 1, height: 1)
@@ -47,18 +56,22 @@ extension ProperyListView {
     struct ViewState: Equatable {
         let items: [PropertyItem.Property]
         let isLoading: Bool
+        let isDetailViewAction: Bool
         
         init(state: ProperyListState) {
             items = state.list.map {
                 PropertyItem.Property.init(property: $0)
             }
             self.isLoading = state.loadingState == .loading
+            self.isDetailViewAction = state.detail != nil
         }
     }
     
     enum ViewAction {
         case fetch
         case error
+        case showDetail(PropertyItem.Property)
+        case dismissDetail
     }
 }
 
@@ -67,6 +80,10 @@ extension PropertyListAction {
         switch action {
         case .fetch:
             self = .fetch
+        case .dismissDetail:
+            self = .dismisDetail
+        case let .showDetail(detail):
+            self = .detailProperty(.init(title: detail.title, image: detail.imageURL, id: detail.id))
         case .error:
             self = .failedFetching("")
         }

@@ -8,7 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct PropertyDetail: View {
+struct PropertyDetailView: View {
     var store: Store<PropertyDetailState, PropertyDetailAction>
     
     var body: some View {
@@ -21,7 +21,7 @@ struct PropertyDetail: View {
     }
 }
 
-extension PropertyDetail {
+extension PropertyDetailView {
     struct ViewState {
         let image: URL?
         let title: String?
