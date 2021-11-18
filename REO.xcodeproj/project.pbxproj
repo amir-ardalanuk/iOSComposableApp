@@ -15,6 +15,7 @@
 		E57F4A6827465D8200F25ACB /* ProperyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F4A6727465D8200F25ACB /* ProperyList.swift */; };
 		E57F4A6B27465EDE00F25ACB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F4A6A27465EDE00F25ACB /* Theme.swift */; };
 		E57F4A6E2746657F00F25ACB /* PropertyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F4A6D2746657F00F25ACB /* PropertyItem.swift */; };
+		E57F4A702746687600F25ACB /* PropertyList+Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F4A6F2746687600F25ACB /* PropertyList+Reducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E57F4A6727465D8200F25ACB /* ProperyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProperyList.swift; sourceTree = "<group>"; };
 		E57F4A6A27465EDE00F25ACB /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E57F4A6D2746657F00F25ACB /* PropertyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyItem.swift; sourceTree = "<group>"; };
+		E57F4A6F2746687600F25ACB /* PropertyList+Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PropertyList+Reducer.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				E57F4A6C2746656900F25ACB /* PropertyItem */,
 				E57F4A6727465D8200F25ACB /* ProperyList.swift */,
+				E57F4A6F2746687600F25ACB /* PropertyList+Reducer.swift */,
 			);
 			path = ProperyList;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				E57F4A5727465C5F00F25ACB /* ContentView.swift in Sources */,
 				E57F4A6B27465EDE00F25ACB /* Theme.swift in Sources */,
 				E57F4A6827465D8200F25ACB /* ProperyList.swift in Sources */,
+				E57F4A702746687600F25ACB /* PropertyList+Reducer.swift in Sources */,
 				E57F4A5527465C5F00F25ACB /* REOApp.swift in Sources */,
 				E57F4A6E2746657F00F25ACB /* PropertyItem.swift in Sources */,
 			);

@@ -6,19 +6,22 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct ProperyList: View {
+    let store: Store<ProperyListState, ProperyListAction>
     
-    var list = [PropertyItem.Property]()
     var body: some View {
-        VStack {
-            Text("Properties")
-                .font(Theme.global.font.bold(size: 20))
-                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-            
-            LazyVStack {
-                ForEach(list) { item in
-                    PropertyItem(item: item)
+        WithViewStore(self.store.scope(state: ViewState.init, action: ProperyListAction.init)) { viewStore in
+            VStack {
+                Text("Properties")
+                    .font(Theme.global.font.bold(size: 20))
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                
+                LazyVStack {
+                    ForEach(viewStore.items) { item in
+                        PropertyItem(item: item)
+                    }
                 }
             }
         }
@@ -30,12 +33,36 @@ struct ProperyList: View {
             maxHeight: .infinity,
             alignment: .top)
         
+    }
+}
+
+extension ProperyList {
+    struct ViewState: Equatable {
+        var items: [PropertyItem.Property]
         
+        init(state: ProperyListState) {
+            items = state.list.map {
+                PropertyItem.Property.init(property: $0)
+            }
+        }
+    }
+    
+    enum ViewAction {
+        case fetch
+    }
+}
+
+extension ProperyListAction {
+    init(action: ProperyList.ViewAction) {
+        switch action {
+        case .fetch:
+            self = .fetch
+        }
     }
 }
 
 struct ProperyList_Previews: PreviewProvider {
     static var previews: some View {
-        ProperyList(list: [.stub, .stub])
+        ProperyList(store: properyListReducerStub)
     }
 }

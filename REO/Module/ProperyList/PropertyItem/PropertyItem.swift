@@ -25,7 +25,7 @@ struct PropertyItem: View {
 }
 
 extension PropertyItem {
-    struct Property: Identifiable {
+    struct Property: Equatable, Identifiable {
         var id: String
         var title: String
         var imageURL: URL?
@@ -33,7 +33,13 @@ extension PropertyItem {
 }
 
 extension PropertyItem.Property {
-   static var stub: PropertyItem.Property {
+    init(property: Property) {
+        self.id = property.id
+        self.imageURL = property.image
+        self.title = property.title
+    }
+    
+    static var stub: PropertyItem.Property {
         .init(id: UUID.init().uuidString, title: "Amir", imageURL: URL.init(string: "https://picsum.photos/100/100"))
     }
 }
