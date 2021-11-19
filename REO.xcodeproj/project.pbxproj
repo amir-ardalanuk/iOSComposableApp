@@ -12,6 +12,8 @@
 		E55810B02746F55A004B8936 /* PropertyDetaiReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55810AF2746F55A004B8936 /* PropertyDetaiReducer.swift */; };
 		E55810B827479011004B8936 /* REOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55810B727479011004B8936 /* REOTests.swift */; };
 		E55810BF27479020004B8936 /* PropertyListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55810BE27479020004B8936 /* PropertyListTest.swift */; };
+		E55810C12747A8DD004B8936 /* DefaultPropertyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55810C02747A8DD004B8936 /* DefaultPropertyTests.swift */; };
+		E55810C42747B0B3004B8936 /* Api+Stubbing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55810C32747B0B3004B8936 /* Api+Stubbing.swift */; };
 		E57F4A5527465C5F00F25ACB /* REOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F4A5427465C5F00F25ACB /* REOApp.swift */; };
 		E57F4A5927465C6000F25ACB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E57F4A5827465C6000F25ACB /* Assets.xcassets */; };
 		E57F4A5C27465C6000F25ACB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E57F4A5B27465C6000F25ACB /* Preview Assets.xcassets */; };
@@ -138,6 +140,8 @@
 		E55810B527479011004B8936 /* REOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = REOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E55810B727479011004B8936 /* REOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REOTests.swift; sourceTree = "<group>"; };
 		E55810BE27479020004B8936 /* PropertyListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListTest.swift; sourceTree = "<group>"; };
+		E55810C02747A8DD004B8936 /* DefaultPropertyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPropertyTests.swift; sourceTree = "<group>"; };
+		E55810C32747B0B3004B8936 /* Api+Stubbing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+Stubbing.swift"; sourceTree = "<group>"; };
 		E57F4A5127465C5F00F25ACB /* REO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = REO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E57F4A5427465C5F00F25ACB /* REOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REOApp.swift; sourceTree = "<group>"; };
 		E57F4A5827465C6000F25ACB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -254,6 +258,14 @@
 				E55810BE27479020004B8936 /* PropertyListTest.swift */,
 			);
 			path = REOTests;
+			sourceTree = "<group>";
+		};
+		E55810C22747B0A1004B8936 /* __mock */ = {
+			isa = PBXGroup;
+			children = (
+				E55810C32747B0B3004B8936 /* Api+Stubbing.swift */,
+			);
+			path = __mock;
 			sourceTree = "<group>";
 		};
 		E57F4A4827465C5F00F25ACB = {
@@ -475,6 +487,7 @@
 			isa = PBXGroup;
 			children = (
 				E57F4ADD27468B4000F25ACB /* RepositoryTests.swift */,
+				E55810C02747A8DD004B8936 /* DefaultPropertyTests.swift */,
 			);
 			path = RepositoryTests;
 			sourceTree = "<group>";
@@ -490,6 +503,7 @@
 		E57F4AED27468C8100F25ACB /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				E55810C22747B0A1004B8936 /* __mock */,
 				E57F4AEE27468C9300F25ACB /* Api.swift */,
 			);
 			path = Api;
@@ -865,6 +879,7 @@
 			files = (
 				E57F4AEC27468BC300F25ACB /* DefaultPropertyListUsecases.swift in Sources */,
 				E57F4AEF27468C9300F25ACB /* Api.swift in Sources */,
+				E55810C42747B0B3004B8936 /* Api+Stubbing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -872,6 +887,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E55810C12747A8DD004B8936 /* DefaultPropertyTests.swift in Sources */,
 				E57F4ADE27468B4000F25ACB /* RepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

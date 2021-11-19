@@ -7,9 +7,9 @@
 
 import Foundation
 
-enum Api {
-    
-}
+enum Api {}
+
+// MARK: - Routing
 
 extension Api {
     enum route: String {
@@ -18,6 +18,7 @@ extension Api {
 }
 
 // MARK: - Api Entities
+
 extension Api {
     struct PropertyList: Decodable {
         public var data: [PropertyItem]

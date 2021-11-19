@@ -11,6 +11,8 @@ import Combine
 
 public final class MockNetwork: NetworkProtocol {
     
+    public init() { }
+    
     public var resultProvider: Any?
     
     public func request<T>(_ request: URLRequest, result: @escaping (Result<T, NetworkError>) -> Void) where T : Decodable {
@@ -22,12 +24,8 @@ public final class MockNetwork: NetworkProtocol {
     }
     
     public func request<T>(_ request: URLRequest, type: T.Type) -> AnyPublisher<T, Error> where T : Decodable {
-        if let provider = resultProvider as? (Result<T, NetworkError>) {
-            return Just(try! provider.get())
-                .mapError { _ -> Error in
-                    NSError()
-                }
-                .eraseToAnyPublisher()
+        if let provider = resultProvider as?  (() -> AnyPublisher<T, Error>) {
+            return provider()
         } else {
             fatalError("provider not injected")
         }
