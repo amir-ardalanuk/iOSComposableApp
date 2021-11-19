@@ -24,7 +24,7 @@ struct REOApp: App {
                         state: \AppState.propertyListState,
                         action: AppAction.propertyListAction
                     )
-                )
+                ).navigationBarTitle("Tic-Tac-Toe")
             }
         }
     }

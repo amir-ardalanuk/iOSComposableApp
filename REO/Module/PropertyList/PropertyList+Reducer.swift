@@ -12,9 +12,9 @@ import Repository
 import Combine
 
 struct ProperyListState: Equatable {
-    let list: [Property]
-    let loadingState: LoadingState
-    let detail: PropertyDetailState?
+    var list: [Property]
+    var loadingState: LoadingState
+    var detail: PropertyDetailState?
     
     init(list: [Property], loadingState: ProperyListState.LoadingState = LoadingState.initial, detail: PropertyDetailState? = nil) {
         self.list = list

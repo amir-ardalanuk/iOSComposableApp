@@ -10,12 +10,16 @@ import Core
 import Repository
 import Network
 
-struct AppUsecases {
-    var propertyListUsecase: PropertyListUsecases
+public struct AppUsecases {
+    public var propertyListUsecase: PropertyListUsecases
+    
+    public init(propertyListUsecase: PropertyListUsecases) {
+        self.propertyListUsecase = propertyListUsecase
+    }
 }
 
 
-extension AppUsecases {
+public extension AppUsecases {
     static var live: AppUsecases {
         .init(propertyListUsecase: DefaultProperyUsecases(network: DefaultNetwork()))
     }

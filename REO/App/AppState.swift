@@ -8,17 +8,22 @@
 import Foundation
 import ComposableArchitecture
 
-public struct AppState {
+public struct AppState: Equatable {
     var propertyListState: ProperyListState
 }
 
-public enum AppAction {
+public enum AppAction: Equatable {
     case propertyListAction(PropertyListAction)
 }
 
 public struct Enviroment {
-    let appUsecases: AppUsecases
-    let mainQueue: AnySchedulerOf<DispatchQueue>
+    public let appUsecases: AppUsecases
+    public let mainQueue: AnySchedulerOf<DispatchQueue>
+    
+    public init(appUsecases: AppUsecases, mainQueue: AnySchedulerOf<DispatchQueue>) {
+        self.appUsecases = appUsecases
+        self.mainQueue = mainQueue
+    }
 }
 
 var appReducer = Reducer<AppState, AppAction, Enviroment>.combine(

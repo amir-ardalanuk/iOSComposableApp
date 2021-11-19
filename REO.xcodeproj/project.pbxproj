@@ -10,6 +10,8 @@
 		E55810AB2746E9BD004B8936 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55810AA2746E9BD004B8936 /* AppState.swift */; };
 		E55810AE2746F4DE004B8936 /* PropertyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55810AD2746F4DE004B8936 /* PropertyDetail.swift */; };
 		E55810B02746F55A004B8936 /* PropertyDetaiReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55810AF2746F55A004B8936 /* PropertyDetaiReducer.swift */; };
+		E55810B827479011004B8936 /* REOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55810B727479011004B8936 /* REOTests.swift */; };
+		E55810BF27479020004B8936 /* PropertyListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55810BE27479020004B8936 /* PropertyListTest.swift */; };
 		E57F4A5527465C5F00F25ACB /* REOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F4A5427465C5F00F25ACB /* REOApp.swift */; };
 		E57F4A5927465C6000F25ACB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E57F4A5827465C6000F25ACB /* Assets.xcassets */; };
 		E57F4A5C27465C6000F25ACB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E57F4A5B27465C6000F25ACB /* Preview Assets.xcassets */; };
@@ -55,6 +57,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E55810B927479011004B8936 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E57F4A4927465C5F00F25ACB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E57F4A5027465C5F00F25ACB;
+			remoteInfo = REO;
+		};
 		E57F4A7A2746746A00F25ACB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E57F4A4927465C5F00F25ACB /* Project object */;
@@ -126,6 +135,9 @@
 		E55810AA2746E9BD004B8936 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		E55810AD2746F4DE004B8936 /* PropertyDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetail.swift; sourceTree = "<group>"; };
 		E55810AF2746F55A004B8936 /* PropertyDetaiReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetaiReducer.swift; sourceTree = "<group>"; };
+		E55810B527479011004B8936 /* REOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = REOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E55810B727479011004B8936 /* REOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REOTests.swift; sourceTree = "<group>"; };
+		E55810BE27479020004B8936 /* PropertyListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListTest.swift; sourceTree = "<group>"; };
 		E57F4A5127465C5F00F25ACB /* REO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = REO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E57F4A5427465C5F00F25ACB /* REOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REOApp.swift; sourceTree = "<group>"; };
 		E57F4A5827465C6000F25ACB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -166,6 +178,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E55810B227479011004B8936 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E57F4A4E27465C5F00F25ACB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -228,6 +247,15 @@
 			path = PropertyDetail;
 			sourceTree = "<group>";
 		};
+		E55810B627479011004B8936 /* REOTests */ = {
+			isa = PBXGroup;
+			children = (
+				E55810B727479011004B8936 /* REOTests.swift */,
+				E55810BE27479020004B8936 /* PropertyListTest.swift */,
+			);
+			path = REOTests;
+			sourceTree = "<group>";
+		};
 		E57F4A4827465C5F00F25ACB = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +265,7 @@
 				E57F4A9B2746774000F25ACB /* NetworkTests */,
 				E57F4AD027468B4000F25ACB /* Repository */,
 				E57F4ADC27468B4000F25ACB /* RepositoryTests */,
+				E55810B627479011004B8936 /* REOTests */,
 				E57F4A5227465C5F00F25ACB /* Products */,
 				E57F4AF42746961400F25ACB /* Frameworks */,
 			);
@@ -251,6 +280,7 @@
 				E57F4A952746774000F25ACB /* NetworkTests.xctest */,
 				E57F4ACF27468B4000F25ACB /* Repository.framework */,
 				E57F4AD627468B4000F25ACB /* RepositoryTests.xctest */,
+				E55810B527479011004B8936 /* REOTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -511,6 +541,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		E55810B427479011004B8936 /* REOTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E55810BB27479011004B8936 /* Build configuration list for PBXNativeTarget "REOTests" */;
+			buildPhases = (
+				E55810B127479011004B8936 /* Sources */,
+				E55810B227479011004B8936 /* Frameworks */,
+				E55810B327479011004B8936 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E55810BA27479011004B8936 /* PBXTargetDependency */,
+			);
+			name = REOTests;
+			productName = REOTests;
+			productReference = E55810B527479011004B8936 /* REOTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E57F4A5027465C5F00F25ACB /* REO */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E57F4A5F27465C6000F25ACB /* Build configuration list for PBXNativeTarget "REO" */;
@@ -637,6 +685,10 @@
 				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
+					E55810B427479011004B8936 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = E57F4A5027465C5F00F25ACB;
+					};
 					E57F4A5027465C5F00F25ACB = {
 						CreatedOnToolsVersion = 13.1;
 					};
@@ -684,11 +736,19 @@
 				E57F4A942746774000F25ACB /* NetworkTests */,
 				E57F4ACE27468B4000F25ACB /* Repository */,
 				E57F4AD527468B4000F25ACB /* RepositoryTests */,
+				E55810B427479011004B8936 /* REOTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E55810B327479011004B8936 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E57F4A4F27465C5F00F25ACB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -736,6 +796,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E55810B127479011004B8936 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E55810BF27479020004B8936 /* PropertyListTest.swift in Sources */,
+				E55810B827479011004B8936 /* REOTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E57F4A4D27465C5F00F25ACB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -810,6 +879,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E55810BA27479011004B8936 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E57F4A5027465C5F00F25ACB /* REO */;
+			targetProxy = E55810B927479011004B8936 /* PBXContainerItemProxy */;
+		};
 		E57F4A7B2746746A00F25ACB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E57F4A752746746A00F25ACB /* Core */;
@@ -848,6 +922,52 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		E55810BC27479011004B8936 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V54G9YU46B;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.reo.REOTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/REO.app/REO";
+			};
+			name = Debug;
+		};
+		E55810BD27479011004B8936 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V54G9YU46B;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.reo.REOTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/REO.app/REO";
+			};
+			name = Release;
+		};
 		E57F4A5D27465C6000F25ACB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1308,6 +1428,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E55810BB27479011004B8936 /* Build configuration list for PBXNativeTarget "REOTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E55810BC27479011004B8936 /* Debug */,
+				E55810BD27479011004B8936 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E57F4A4C27465C5F00F25ACB /* Build configuration list for PBXProject "REO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
