@@ -16,6 +16,7 @@
 		293EA59127524AF5003BC0E0 /* AnyDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F4AAE274677F600F25ACB /* AnyDecoder.swift */; };
 		293EA59227524AF5003BC0E0 /* DefaultDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F4AB0274678A800F25ACB /* DefaultDecoder.swift */; };
 		293EA59327524AF9003BC0E0 /* MockDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F4AB3274678CC00F25ACB /* MockDecoder.swift */; };
+		293EA59927527B07003BC0E0 /* CacheAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293EA59827527B06003BC0E0 /* CacheAsyncImage.swift */; };
 		E55810AB2746E9BD004B8936 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55810AA2746E9BD004B8936 /* AppState.swift */; };
 		E55810AE2746F4DE004B8936 /* PropertyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55810AD2746F4DE004B8936 /* PropertyDetail.swift */; };
 		E55810B02746F55A004B8936 /* PropertyDetaiReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55810AF2746F55A004B8936 /* PropertyDetaiReducer.swift */; };
@@ -129,6 +130,7 @@
 /* Begin PBXFileReference section */
 		293EA57327524A58003BC0E0 /* NetworkLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		293EA57A27524A59003BC0E0 /* NetworkLayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkLayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		293EA59827527B06003BC0E0 /* CacheAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheAsyncImage.swift; sourceTree = "<group>"; };
 		E55810AA2746E9BD004B8936 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		E55810AD2746F4DE004B8936 /* PropertyDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetail.swift; sourceTree = "<group>"; };
 		E55810AF2746F55A004B8936 /* PropertyDetaiReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetaiReducer.swift; sourceTree = "<group>"; };
@@ -253,6 +255,14 @@
 			path = NetworkLayerTests;
 			sourceTree = "<group>";
 		};
+		293EA59727527AEF003BC0E0 /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+				293EA59827527B06003BC0E0 /* CacheAsyncImage.swift */,
+			);
+			path = CommonUI;
+			sourceTree = "<group>";
+		};
 		E55810AC2746F4BD004B8936 /* PropertyDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +321,7 @@
 		E57F4A5327465C5F00F25ACB /* REO */ = {
 			isa = PBXGroup;
 			children = (
+				293EA59727527AEF003BC0E0 /* CommonUI */,
 				E57F4AF72746B2F900F25ACB /* App */,
 				E57F4A6927465ED300F25ACB /* Resource */,
 				E57F4A6527465D6D00F25ACB /* Module */,
@@ -830,6 +841,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E57F4A6B27465EDE00F25ACB /* Theme.swift in Sources */,
+				293EA59927527B07003BC0E0 /* CacheAsyncImage.swift in Sources */,
 				E57F4A6827465D8200F25ACB /* ProperyList.swift in Sources */,
 				E55810AB2746E9BD004B8936 /* AppState.swift in Sources */,
 				E57F4A702746687600F25ACB /* PropertyList+Reducer.swift in Sources */,

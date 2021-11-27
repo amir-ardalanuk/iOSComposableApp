@@ -13,7 +13,7 @@ struct PropertyItem: View {
     
     var body: some View {
         HStack(spacing: 16) {
-            AsyncImage.init(url: item.imageURL) { image in
+            CacheAsyncImage(url: item.imageURL) { image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -23,7 +23,9 @@ struct PropertyItem: View {
                 ProgressView()
                     .frame(width: 64, height: 64, alignment: .center)
                     .cornerRadius(8)
+            
             }
+            
             Text(item.title)
                 .font(Theme.global.font.regular(size: 18))
                 .lineLimit(1)
