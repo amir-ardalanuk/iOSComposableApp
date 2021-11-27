@@ -2,7 +2,6 @@
 
 Before starting used Xcode version `13.1`
 
-`Notice`: As I mentioned on the Review my loptop was broken I use my friend laptop to done this task.
 
 ## `Project Structure`
 
