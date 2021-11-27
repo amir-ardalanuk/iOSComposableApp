@@ -26,6 +26,7 @@ struct PropertyItem: View {
             }
             Text(item.title)
                 .font(Theme.global.font.regular(size: 18))
+                .lineLimit(1)
         }
         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
     }

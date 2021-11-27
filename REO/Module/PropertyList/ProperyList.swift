@@ -15,10 +15,7 @@ struct ProperyListView: View {
     var body: some View {
         WithViewStore(self.store.scope(state: ViewState.init, action: PropertyListAction.init)) { viewStore in
             VStack {
-                if viewStore.isLoading {
-                    ProgressView()
-                }
-                ScrollView {
+                ScrollView(.vertical, showsIndicators: false) {
                     VStack {
                         LazyVStack(spacing: 8) {
                             ForEach(viewStore.items) { item in
@@ -44,6 +41,9 @@ struct ProperyListView: View {
                                 }
                         }
                     }
+                }
+                if viewStore.isLoading {
+                    ProgressView()
                 }
             }
         }.debug()
