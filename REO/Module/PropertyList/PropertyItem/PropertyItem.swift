@@ -13,12 +13,17 @@ struct PropertyItem: View {
     
     var body: some View {
         HStack(spacing: 16) {
-            AsyncImage(url: item.imageURL)
-                .frame(width: 64, height: 64, alignment: .center)
-                .aspectRatio(contentMode: .fit)
-                .cornerRadius(8)
-                
-            
+            AsyncImage.init(url: item.imageURL) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 64, height: 64, alignment: .center)
+                    .cornerRadius(8)
+            } placeholder: {
+                ProgressView()
+                    .frame(width: 64, height: 64, alignment: .center)
+                    .cornerRadius(8)
+            }
             Text(item.title)
                 .font(Theme.global.font.regular(size: 18))
         }

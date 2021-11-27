@@ -59,6 +59,16 @@
                ReferencedContainer = "container:REO.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "293EA57927524A59003BC0E0"
+               BuildableName = "NetworkLayerTests.xctest"
+               BlueprintName = "NetworkLayerTests"
+               ReferencedContainer = "container:REO.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

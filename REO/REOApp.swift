@@ -26,6 +26,7 @@ struct REOApp: App {
                     )
                 ).navigationBarTitle("Tic-Tac-Toe")
             }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }

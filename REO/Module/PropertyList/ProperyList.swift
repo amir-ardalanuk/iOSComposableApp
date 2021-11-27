@@ -28,13 +28,14 @@ struct ProperyListView: View {
                                     then: PropertyDetailView.init(store:)
                                   ),
                                   isActive: viewStore.binding(
-                                    get: \.isDetailViewAction,
+                                    get: \.isDetailViewActive,
                                     send: { $0 ? .showDetail(item) : .dismissDetail }
                                   )
                                 ) {
                                     PropertyItem(item: item)
                                 }
                                 .buttonStyle(PlainButtonStyle())
+                                .disabled(viewStore.isLoading)
                             }
                             Rectangle()
                                 .frame(width: 1, height: 1)
@@ -45,7 +46,7 @@ struct ProperyListView: View {
                     }
                 }
             }
-        }
+        }.debug()
         .navigationTitle("Propertis")
         .padding(16.0)
     }
@@ -56,14 +57,14 @@ extension ProperyListView {
     struct ViewState: Equatable {
         let items: [PropertyItem.Property]
         let isLoading: Bool
-        let isDetailViewAction: Bool
+        let isDetailViewActive: Bool
         
         init(state: ProperyListState) {
             items = state.list.map {
                 PropertyItem.Property.init(property: $0)
             }
             self.isLoading = state.loadingState == .loading
-            self.isDetailViewAction = state.detail != nil
+            self.isDetailViewActive = state.detail != nil
         }
     }
     

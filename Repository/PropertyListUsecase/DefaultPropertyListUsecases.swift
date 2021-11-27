@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Network
+import NetworkLayer
 import Combine
 import Core
 

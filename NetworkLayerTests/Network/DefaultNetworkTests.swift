@@ -7,7 +7,7 @@
 
 import Foundation
 import XCTest
-@testable import Network
+@testable import NetworkLayer
 
 final class DefaultNetworkTest: XCTestCase {
     // MARK: - Properties

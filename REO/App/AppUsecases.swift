@@ -8,7 +8,7 @@
 import Foundation
 import Core
 import Repository
-import Network
+import NetworkLayer
 
 public struct AppUsecases {
     public var propertyListUsecase: PropertyListUsecases
