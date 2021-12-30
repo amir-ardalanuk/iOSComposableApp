@@ -7,7 +7,7 @@
 		<key>Core.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>4</integer>
 		</dict>
 		<key>CustomDump (Playground) 1.xcscheme</key>
 		<dict>
@@ -33,12 +33,12 @@
 		<key>NetworkLayer.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>23</integer>
+			<integer>6</integer>
 		</dict>
 		<key>NetworkLayerTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>27</integer>
+			<integer>3</integer>
 		</dict>
 		<key>REO.xcscheme_^#shared#^_</key>
 		<dict>
@@ -53,7 +53,7 @@
 		<key>Repository.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>14</integer>
+			<integer>5</integer>
 		</dict>
 		<key>RepositoryTests.xcscheme_^#shared#^_</key>
 		<dict>

@@ -48,7 +48,6 @@ struct CacheAsyncImage<Content> : View where Content: View {
             }
         }
     
-    
     var body: some View {
         content(phase)
             .task(priority: .background) {
